@@ -1,9 +1,10 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
-const products = require("./routes/products");
 const auth = require("./routes/auth");
+const products = require("./routes/products");
 const requests = require("./routes/requests");
+const users = require("./routes/users");
 const cookieParser = require("cookie-parser");
 const mongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
@@ -56,9 +57,10 @@ app.use(cors({
 }));
 
 // API routes
-app.use("/api/v1/products", products);
 app.use("/api/v1/auth", auth);
+app.use("/api/v1/products", products);
 app.use("/api/v1/requests", requests);
+app.use("/api/v1/users", users);
 
 // Swagger configuration
 const swaggerOptions = {
