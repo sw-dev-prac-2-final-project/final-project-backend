@@ -60,3 +60,7 @@ A comprehensive RESTful API for inventory management with user authentication an
 - MongoDB connection with mongoose
 
 The project follows RESTful API conventions with proper middleware, error handling, and security measures. It's designed to handle inventory management with user authentication and role-based access control.
+
+
+Vercel : 
+final-project-backend-black.vercel.app
