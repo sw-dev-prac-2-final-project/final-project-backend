@@ -33,7 +33,7 @@ app.use(hpp());
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 10 * 60 * 1000, // 10 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
+  max: 1000, // limit each IP to 100 requests per windowMs
   message: {
     success: false,
     error: "Too many requests from this IP, please try again later."
@@ -141,7 +141,7 @@ app.use('*', (req, res) => {
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  
+
   res.status(err.statusCode || 500).json({
     success: false,
     error: err.message || 'Internal Server Error',
